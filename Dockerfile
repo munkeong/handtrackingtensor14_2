@@ -6,18 +6,18 @@
 
 FROM python:3.6
 
-RUN mkdir /src
-WORKDIR /src
+#RUN mkdir /src
+#WORKDIR /src
 
 #COPY libm.so.6 /lib/libm.so.6
 
 #COPY requirements.txt /src/requirements.txt
 #RUN pip install -r requirements.txt
 
-COPY . /src
+#COPY . /src
 #RUN pip install .
 
-ENV LD_LIBRARY_PATH /src:$LD_LIBRARY_PATH
+ENV LD_LIBRARY_PATH ./:$LD_LIBRARY_PATH
 RUN export LD_LIBRARY_PATH PATH
 
 #RUN LD_LIBRARY_PATH="/opt/root-app/src:$LD_LIBRARY_PATH"
